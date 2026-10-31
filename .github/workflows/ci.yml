@@ -1,14 +1,13 @@
+
 name: Wine Quality First CI
 
 on:
   push:
     branches:
       - main
-
   pull_request:
     branches:
       - main
-
   workflow_dispatch:
 
 permissions:
@@ -28,9 +27,13 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-  run: |
-    python -m pip install --upgrade pip
-    pip install -r requirements.txt
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Train Wine Quality model
+        run: python train_model.py
 
       - name: Run automated tests
         run: python -m unittest discover -v
+
