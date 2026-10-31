@@ -31,7 +31,7 @@ class TestPredictionApplication(unittest.TestCase):
             }
         )
         self.assertEqual(response.status_code, 200)
-        self.assertIn("prediction", response.get_json())
+        self.assertEqual(response.get_json()["prediction"], 999)
 
     def test_missing_field_validation(self):
         response = self.client.post(
