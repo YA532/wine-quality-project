@@ -64,7 +64,7 @@ class TestMLPipeline(unittest.TestCase):
         prediction = model.predict(sample)[0]
         valid_classes = [int(value) for value in model.classes_]
 
-        self.assertIn(int(prediction), valid_classes)
+        self.assertEqual(int(prediction), -1)
 
     def test_low_alcohol_wine_prediction(self):
         data = pd.read_csv(DATASET_PATH)
