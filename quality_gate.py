@@ -1,7 +1,7 @@
 import json
 import sys
 
-MINIMUM_ACCURACY = 0.40
+MINIMUM_ACCURACY = 0.99
 
 print("Reading Wine Quality model metrics...")
 
