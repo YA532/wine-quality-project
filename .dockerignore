@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.git/
+.github/
+test_*.py
+wine_venv/
+datasets/
+release_candidate/
+.pytest_cache/

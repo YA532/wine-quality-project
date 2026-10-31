@@ -61,6 +61,8 @@ jobs:
           cp wine_quality_model.pkl release_candidate/
           cp metrics.json release_candidate/
           cp requirements.txt release_candidate/
+          cp Dockerfile release_candidate/
+          cp .dockerignore release_candidate/
           echo "Wine Quality Prediction Application" > release_candidate/DEPLOYMENT.txt
           echo "Run the application using: python app.py" >> release_candidate/DEPLOYMENT.txt
           echo "Prediction endpoint: POST /predict" >> release_candidate/DEPLOYMENT.txt
