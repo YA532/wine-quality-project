@@ -1,5 +1,4 @@
-
-name: Wine Quality ML CI
+name: Wine Quality ML CI and CD
 
 on:
   push:
@@ -49,5 +48,27 @@ jobs:
             wine_quality_model.pkl
             metrics.json
             datasets/WineQT.csv
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Run prediction application tests
+        run: python -m unittest test_app.py -v
+
+      - name: Prepare release candidate
+        run: |
+          mkdir -p release_candidate
+          cp app.py release_candidate/
+          cp wine_quality_model.pkl release_candidate/
+          cp metrics.json release_candidate/
+          cp requirements.txt release_candidate/
+          echo "Wine Quality Prediction Application" > release_candidate/DEPLOYMENT.txt
+          echo "Run the application using: python app.py" >> release_candidate/DEPLOYMENT.txt
+          echo "Prediction endpoint: POST /predict" >> release_candidate/DEPLOYMENT.txt
+
+      - name: Upload release candidate
+        uses: actions/upload-artifact@v4
+        with:
+          name: wine-quality-ml-release
+          path: release_candidate/
           if-no-files-found: error
           retention-days: 7
