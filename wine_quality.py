@@ -11,7 +11,7 @@ def load_dataset():
 
 def predict_quality(quality):
     if quality >= 6:
-        return "Average"
+        return "Good"
     else:
         return "Average"
 
