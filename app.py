@@ -22,10 +22,17 @@ FEATURES = [
 ]
 
 @app.get("/")
-def health_check():
+def home():
     return jsonify({
         "status": "ok",
         "service": "wine-quality-prediction"
+    })
+
+@app.get("/health")
+def health():
+    return jsonify({
+        "status": "healthy",
+        "model_loaded": True
     })
 
 @app.post("/predict")
