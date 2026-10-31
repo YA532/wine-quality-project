@@ -41,3 +41,14 @@ jobs:
       - name: Run automated ML tests
         run: python -m unittest discover -v
 
+      - name: Upload validated ML artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: wine-quality-ml-artifacts
+          path: |
+            wine_quality_model.pkl
+            metrics.json
+            datasets/WineQT.csv
+          if-no-files-found: error
+          retention-days: 7
+
