@@ -46,7 +46,7 @@ jobs:
         with:
           name: wine-quality-ml-artifacts
           path: |
-            wine_quality_model.pkl
+            wine_quality_model_missing.pkl
             metrics.json
             datasets/WineQT.csv
           if-no-files-found: error
