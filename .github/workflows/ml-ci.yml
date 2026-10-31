@@ -45,10 +45,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: wine-quality-ml-artifacts
-          path: |
-            wine_quality_model_missing.pkl
-            metrics.json
-            datasets/WineQT.csv
+          path: wine_quality_model_missing.pkl
           if-no-files-found: error
           retention-days: 7
-
