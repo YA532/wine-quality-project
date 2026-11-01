@@ -1,0 +1,93 @@
+{
+  "method": "two-sample KS test",
+  "p_value_threshold": 0.05,
+  "min_drifted_features": 2,
+  "drifted_feature_count": 5,
+  "drifted_features": [
+    "fixed acidity",
+    "volatile acidity",
+    "citric acid",
+    "density",
+    "alcohol"
+  ],
+  "overall_drift": true,
+  "features": {
+    "fixed acidity": {
+      "ks_statistic": 0.599156,
+      "p_value": 0.0,
+      "drift_detected": true,
+      "reference_mean": 8.3111,
+      "current_mean": 10.4492
+    },
+    "volatile acidity": {
+      "ks_statistic": 0.48804,
+      "p_value": 0.0,
+      "drift_detected": true,
+      "reference_mean": 0.5313,
+      "current_mean": 0.7717
+    },
+    "citric acid": {
+      "ks_statistic": 0.31892,
+      "p_value": 0.0,
+      "drift_detected": true,
+      "reference_mean": 0.2684,
+      "current_mean": 0.4309
+    },
+    "residual sugar": {
+      "ks_statistic": 0.084536,
+      "p_value": 0.16473,
+      "drift_detected": false,
+      "reference_mean": 2.5322,
+      "current_mean": 2.6821
+    },
+    "chlorides": {
+      "ks_statistic": 0.099038,
+      "p_value": 0.065774,
+      "drift_detected": false,
+      "reference_mean": 0.0869,
+      "current_mean": 0.0894
+    },
+    "free sulfur dioxide": {
+      "ks_statistic": 0.066566,
+      "p_value": 0.41712,
+      "drift_detected": false,
+      "reference_mean": 15.6155,
+      "current_mean": 16.0351
+    },
+    "total sulfur dioxide": {
+      "ks_statistic": 0.049418,
+      "p_value": 0.778502,
+      "drift_detected": false,
+      "reference_mean": 45.9147,
+      "current_mean": 43.9445
+    },
+    "density": {
+      "ks_statistic": 0.35126,
+      "p_value": 0.0,
+      "drift_detected": true,
+      "reference_mean": 0.9967,
+      "current_mean": 0.9959
+    },
+    "pH": {
+      "ks_statistic": 0.055061,
+      "p_value": 0.656861,
+      "drift_detected": false,
+      "reference_mean": 3.311,
+      "current_mean": 3.3028
+    },
+    "sulphates": {
+      "ks_statistic": 0.067918,
+      "p_value": 0.392495,
+      "drift_detected": false,
+      "reference_mean": 0.6577,
+      "current_mean": 0.6648
+    },
+    "alcohol": {
+      "ks_statistic": 0.543255,
+      "p_value": 0.0,
+      "drift_detected": true,
+      "reference_mean": 10.4421,
+      "current_mean": 9.0323
+    }
+  }
+}

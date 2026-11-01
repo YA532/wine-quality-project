@@ -1,0 +1,29 @@
+{
+    "approved_accuracy": 0.4585152838427948,
+    "candidate_accuracy": 0.4410480349344978,
+    "minimum_accuracy": 0.4,
+    "candidate_training_records": 1114,
+    "testing_records": 229,
+    "quality_classes": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+    ],
+    "features": [
+        "fixed acidity",
+        "volatile acidity",
+        "citric acid",
+        "residual sugar",
+        "chlorides",
+        "free sulfur dioxide",
+        "total sulfur dioxide",
+        "density",
+        "pH",
+        "sulphates",
+        "alcohol"
+    ],
+    "candidate_model": "/home/yash/wine-quality-project/drift/wine_quality_model_candidate.pkl"
+}
