@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wine-quality
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: wine-quality
+  template:
+    metadata:
+      labels:
+        app: wine-quality
+    spec:
+      imagePullSecrets:
+        - name: ghcr-secret
+      containers:
+        - name: wine-quality-api
+          image: ghcr.io/ya532/wine-quality-ml:practical-12
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 5000
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 5000
+            initialDelaySeconds: 20
+            periodSeconds: 20
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"

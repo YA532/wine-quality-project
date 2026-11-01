@@ -1,3 +1,4 @@
 wine_venv/
 __pycache__/
 *.pyc
+actions-runner/
